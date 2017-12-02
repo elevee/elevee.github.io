@@ -234,3 +234,13 @@ a.destination_point {
 a.destination_point i:after {
 	content: "Paso Robles";
 }
+
+div#myModal.reveal-modal {
+	background-color: white;
+	position: absolute;
+	top: 300px;
+}
+
+.reveal-modal {
+	position: fixed;
+}

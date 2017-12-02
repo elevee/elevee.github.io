@@ -17,3 +17,13 @@ $(".airport_point").on('mouseover', function(e){
 $(".airport_point .destination_point").on('click', function(e){
 	e.preventDefault();
 });
+
+
+$("#rsvp_modal").iziModal({
+	closeButton: true
+});
+
+$(document).on('click', '.trigger', function (event) {
+    event.preventDefault();
+    $('#rsvp_modal').iziModal('open');
+});
