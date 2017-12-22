@@ -172,6 +172,10 @@ section#proposal{
 	position: relative;
 }
 
+#ca_airport_map img {
+	max-width: none; /*Prevent CA state map image from resizing*/
+}
+
 .fa-plane {
 	color: #f77979;
 	position: absolute;
