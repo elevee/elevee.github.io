@@ -14,6 +14,7 @@
 	<script src="scripts/foundation-6.4.2-complete/js/vendor/jquery.js"></script>
 	<script src="https://use.fontawesome.com/01ccd90832.js"></script>
 	<script src="node_modules/izimodal/js/iziModal.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 	
@@ -172,10 +173,30 @@
 	<!-- <span>Danielle</span><span>Eric</span> -->
 
 	<div id="rsvp_modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-	  <h2 id="modalTitle">Awesome. I have it.</h2>
+	  <h2 id="modalTitle">Let Us Know You're Coming</h2>
 	  <p class="lead">Your couch.  It is mine.</p>
 	  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-	  <a class="close-reveal-modal" aria-label="Close" data-izimodal-close="" data-izimodal-transitionout="bounceOutDown">&#215;</a>
+	  <form>
+	  	<div class="grid-container">
+		    <div id="swap" class="grid-x grid-padding-x">
+		      <div class="medium-6 cell">
+		        <label>Invite Code
+		          <input type="text" id="inviteCode" placeholder="Invite code inside your invitation">
+		        </label>
+		      </div>
+		      <!-- <div class="medium-6 cell">
+		        <label>Input Label
+		          <input type="text" placeholder=".medium-6.cell">
+		        </label>
+		      </div> -->
+		    	<div class="g-recaptcha" data-sitekey="6LcFrjYUAAAAAFcMeaKM2ssD6NaY3Tqa4xU0OF5C"></div>
+		    </div>
+		    <div class="grid-x grid-padding-x">
+		    	<input id="lookup" type="submit" class="button" value="Submit">
+		    </div>
+	  	</div>
+	  </form>
+	  <!-- <a class="close-reveal-modal" aria-label="Close" data-izimodal-close="" data-izimodal-transitionout="bounceOutDown">&#215;</a> -->
 	</div>
 
     <script src="scripts/foundation-6.4.2-complete/js/vendor/what-input.js"></script>

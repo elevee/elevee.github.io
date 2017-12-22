@@ -235,12 +235,20 @@ a.destination_point i:after {
 	content: "Paso Robles";
 }
 
-div#myModal.reveal-modal {
+.iziModal-wrap {
 	background-color: white;
 	position: absolute;
-	top: 300px;
+	padding: 10px;
+}
+
+#rsvp_modal span {
+	margin-left: 15px;
 }
 
 .reveal-modal {
-	position: fixed;
+	/*position: fixed;*/
+}
+
+#inviteCode {
+	text-transform: uppercase;
 }

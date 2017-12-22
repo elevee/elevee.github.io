@@ -1,0 +1,24 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "Just some wedding website, yo!",
+  "main": "index.js",
+  "dependencies": {
+    "izimodal": "^1.5.1",
+    "simple-server": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elevee/elevee.github.io.git"
+  },
+  "author": "Eric Levine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elevee/elevee.github.io/issues"
+  },
+  "homepage": "https://github.com/elevee/elevee.github.io"
+}
