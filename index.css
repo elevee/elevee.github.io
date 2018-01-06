@@ -238,3 +238,7 @@ a.destination_point {
 a.destination_point i:after {
 	content: "Paso Robles";
 }
+
+.hotel_prices span {
+	text-align: center;
+}
