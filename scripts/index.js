@@ -133,7 +133,7 @@ $(document).ready(function(){
 					var postData = {
 						type: "confirm",
 						inviteCode: $("#inviteCode").html().trim(),
-						decision: $(event.target).attr('data-decision'),
+						attending: $(event.target).attr('data-decision'),
 						notes: $("textarea").val()
 					}
 					console.log("Submitting confirmation: "+JSON.stringify(postData));
