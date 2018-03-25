@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	//nav anchor tags content obstruction workaround
-	var shiftWindow = function() { scrollBy(0, -50) };
+	var shiftWindow = function() { scrollBy(0, -50); };
 	if (location.hash) shiftWindow();
 	window.addEventListener("hashchange", shiftWindow);
 
@@ -41,7 +41,7 @@ $(document).ready(function(){
 	 //    radius: 3,
 	 //    zindex: 999,
 	 //    iframe: false,
-	 //    iframeHeight: 400,
+	    // iframeHeight: 400,
 	 //    iframeURL: null,
 	 //    focusInput: true,
 	 //    group: '',
@@ -85,104 +85,180 @@ $(document).ready(function(){
 		// Submit on Modal
 	$("form").on('click', "input[type='submit'][id='lookup']", function (event) {
 	    event.preventDefault();
-	    var input = {
-	    	type: "lookup",
-	    	query: $("#inviteCode").val().toUpperCase().trim()
-	    }
-	    console.log(input);
-	    
-	    $('#rsvp_modal').iziModal('startLoading');
-	    $.ajax({
+		var input = {
+			type: "lookup",
+			query: $("#inviteCode").val().toUpperCase().trim()
+		};
+		console.log(input);
+
+		//quick n dirty validation
+		if(!input["query"] || input["query"] == ""){
+			alert("Please fill out the invite code that came with your reservation.");//error message
+			return;
+		}
+		
+		$('#rsvp_modal').iziModal('startLoading');
+		$.ajax({
 			url: "http://www.levinelabs.com/rsvp-ajax.php",
 			data: input,
-			dataType: "json"
-		}).done(function(data){
-			console.log("Response: "+JSON.stringify(data));
-			if(data && data.status === "SUCCESS"){
+			dataType: "json",
+			success: function(data){
+				console.log("Response: "+JSON.stringify(data));
+				if(data && data.status === "SUCCESS"){
 					var _html  = "<div class='grid-x grid-padding-x>'";
-		    		_html += 	"<h2>Found ya!</h2>";
-		    		_html += 	"<div class='medium-12 cell'>";
-		    		_html += 		"<p>Invite Code <span id='inviteCode'>"+data.record.code+"</span></p>";
-		    		_html += 	"</div>";
-		    		_html += "</div>";
-		    		_html += "<div class='grid-x grid-padding-x>'";
-		    		_html += 	"<div class='medium-12 cell'>";
-		    		_html += 		"<p>Name on invitation <span id='inviteName'>"+data.record.name+"</span></p>";
-		    		_html += 	"</div>";
-		    		_html += 	"<div class='medium-12 cell'>";
-		    		_html += 		"<p>Size of Party<span id='inviteSize'>"+data.record.size+"</span></p>";
-		    		_html += 	"</div>";
-		    		_html += 	"<div class='medium-12 cell'>";
-		    		_html += 		"<label for='inviteNotes'>Notes/Remarks (limit 200)</label>";
-		    		_html += 		"<textarea id='inviteNotes' maxlength='200'></textarea>";
-		    		_html += 	"</div>";
-				    _html += "</div>";
-				    _html += 	"<div class='medium-12 cell'>";
-				    _html += 		"<div class='confirm button success' data-decision='yes'>Going</div>"
-				    _html += 		"<div class='confirm button alert' data-decision='no'>Not Going</div>"
-				    _html += 	"</div>";
-				    _html += "<div class='grid-x grid-padding-x>'";
+						_html += 	"<div class='medium-12 cell'>";
+						_html += 		"<h1><span id='inviteName'>"+data.record.name+"</span><span id='inviteCode'>("+data.record.code+")</span></h1>";
+						_html += 	"</div>";
+						_html += 	"<div class='medium-12 medium-offset-3 cell switch-field'>";
+						_html += 		"<div class='switch-title'>Attending?</div>";
+						_html += 		"<input type='radio' id='attending_yes' name='attending' value='Y' checked/>";
+						_html += 		"<label for='attending_yes'>Yes</label>";
+						_html += 		"<input type='radio' id='attending_no' name='attending' value='N' />";
+						_html += 		"<label for='attending_no'>No</label>";
+						_html += 	"</div>";
+						_html +=	"<div id='if_attending'>";
+						_html += 		"<div class='medium-12 cell attendance'>";
+						_html += 			"<select>";
+											var i = 1;
+											while(i <= parseInt(data.record.size)){
+												_html += "<option value='"+i+"' "+(data.record.num_attending == i ? "selected=selected": "")+">"+i+"</option>";
+												i++;
+											}
+						_html += 			"</select>";
+						_html += 			"<span>of <span id='inviteSize'>"+data.record.size+"</span> attending</span>";
+						_html += 		"</div>";
+						_html += 		"<div class='medium-12 cell'>";
+						_html += 			"<p>Attending Welcome Cocktails? (Fri 9/7 5p)</p>";
+						_html += 			"<input type='radio' id='attending_welcome1' name='attending_welcome' value='Y' "+(data.record.attending_welcome == "Y" ? "checked" : "")+"/>";
+						_html += 			"<label for='attending_welcome'>Yes</label>";
+						_html += 			"<input type='radio' id='attending_welcome2' name='attending_welcome' value='N' "+(data.record.attending_welcome == "N" ? "checked" : "")+"/>";
+						_html += 			"<label for='attending_welcome'>No</label>";
+						_html += 		"</div>";
+						_html += 		"<div class='medium-12 cell'>";
+						_html += 			"<p>Choose pre-wedding shuttle (Sat 9/8)</p>";
+											data.shuttles.forEach(function(shuttle){
+												if(parseInt(shuttle.remaining) > parseInt(data.record.size)){
+													_html += "<input type='radio' id='shuttle"+shuttle.number+"' name='shuttle' value='"+shuttle.number+"' "+(data.record.shuttle === shuttle.number ? "checked" : "")+"/>";
+													_html += "<label for='shuttle"+shuttle.number+"'>"+shuttle.time+" ("+shuttle.remaining+" seat(s) remaining)</label><br/>";
+												} else {
+													_html += "<span>"+shuttle.time+" (Full)</span><br/>";
+												}
+											});
+						_html += 			"<input type='radio' id='shuttle_none' name='shuttle' value='self' "+(data.record.shuttle === "self" ? "checked" : "")+"/>";
+						_html += 			"<label for='shuttle_none'>None / Self transport </label><br/>";
+			    		_html += 		"</div>";
+			    		_html += 		"<div class='medium-12 cell'>";
+			    		_html += 			"<p>Attending Bagel Brunch?  (Sun 9/9 10a)</p>";
+			    		_html += 			"<input type='radio' id='attending_brunch1' name='attending_brunch' value='Y' "+(data.record.attending_brunch == "Y" ? "checked" : "")+"/>";
+			    		_html += 			"<label for='attending_brunch'>Yes</label>";
+			    		_html += 			"<input type='radio' id='attending_brunch2' name='attending_brunch' value='N' "+(data.record.attending_brunch == "N" ? "checked" : "")+"/>";
+			    		_html += 			"<label for='attending_brunch'>No</label>";
+			    		_html += 		"</div>";
+			    		_html += 	"</div>";
+			    		_html += 	"<div class='medium-12 cell'>";
+			    		_html += 		"<label for='inviteNotes'>Notes/Remarks (limit 200)</label>";
+			    		_html += 		"<textarea id='inviteNotes' maxlength='200'>"+(data.record.notes ? data.record.notes : "")+"</textarea>";
+			    		_html += 	"</div>";
+					    _html += "</div>";
+					    _html += 	"<div class='medium-12 cell'>";
+					    // _html += 		"<div class='confirm button success' data-decision='yes'>Going</div>";
+					    _html += 		"<button class='confirm button'>Submit</button>";
+					    _html += 	"</div>";
+					    _html += "<div class='grid-x grid-padding-x>'";
 
-				    _html += "</div>";
-				$('#rsvp_modal').iziModal('setContent', _html);
-				$('#rsvp_modal').iziModal('stopLoading');
+					    _html += "</div>";
+					$('#rsvp_modal').iziModal('setContent', _html);
+					$('#rsvp_modal').iziModal('stopLoading');
 
-				$("#rsvp_modal").on("click", "div.confirm", function(event){
-					event.preventDefault();
-					$('#rsvp_modal').iziModal('startLoading');
-					var postData = {
-						type: "confirm",
-						inviteCode: $("#inviteCode").html().trim(),
-						attending: $(event.target).attr('data-decision'),
-						notes: $("textarea").val()
-					}
-					console.log("Submitting confirmation: "+JSON.stringify(postData));
-
-					$.ajax({
-						url: "http://www.levinelabs.com/rsvp-ajax.php",
-						method: "post",
-						data: postData,
-						dataType: "json"
-					}).done(function(data){
-						console.log("Response: "+JSON.stringify(data));
-						if(data && data.status === "SUCCESS"){
-								var _html  = "<div class='grid-x grid-padding-x>'";
-					    		_html += 	"<h2>Thank you! Your RSVP has been recorded.</h2>";
-					    		_html += 	"<div class='medium-12 cell'>";
-					    		// if(){
-					    		_html += 		"<p>Blah blah the result blah blah.</p>";
-					    		// } else {
-
-					    		// }
-					    		_html += 	"</div>";
-					    		_html += "</div>";
-					    		_html += "<div class='grid-x grid-padding-x>'";
-					    		_html += 	"<div class='medium-12 cell'>";
-					    		_html += 		"<p>Name on invitation <span id='inviteName'>"+data.record.name+"</span></p>";
-					    		_html += 	"</div>";
-					    		_html += 	"<div class='medium-12 cell'>";
-					    		_html += 		"<p>Size of Party<span id='inviteSize'>"+data.record.size+"</span></p>";
-					    		_html += 	"</div>";
-							    _html += "</div>";
-							    _html += 	"<div class='medium-12 cell'>";
-							    _html += 		"<div class='confirm button success'></div>"
-							    _html += 	"</div>";
-							    _html += "<div class='grid-x grid-padding-x>'";
-
-							    _html += "</div>";
-							$('#rsvp_modal').iziModal('setContent', _html);
-							$('#rsvp_modal').iziModal('stopLoading');
+					$(".switch-field").on("click", "label", function(event){
+						console.log("you just clicked: "+$(this).attr('for'));
+						if($(this).attr("for") == "attending_yes"){
+							$("#if_attending").slideDown();
+						} else {
+							$("#if_attending").slideUp();
 						}
-					}).fail(function(err){
-						console.log("Error: "+JSON.stringify(err));
-						$('#rsvp_modal').iziModal('stopLoading');
 					});
 
-				});
+					if(data.record.attending && data.record.attending.length > 0){ //if they already rsvped NO, it shows that and hides the other questions
+						console.log("Data Record attending length!", data.record.attending.length);
+						if(data.record.attending == "N"){ $("label[for=attending_no]").click(); }
+					}
+
+					$("#rsvp_modal").on("click", "button.confirm", function(event){
+						event.preventDefault();
+						$('#rsvp_modal').iziModal('startLoading');
+						var postData = {
+							type: "confirm",
+							inviteCode: $("#inviteCode").html().trim().replace(/\(|\)/g, ""), //removing parenthesis
+							num_attending: $(".attendance select").val(),
+							attending: $("input[name=attending]:checked").val(),
+							attending_welcome: (document.querySelector('input[name="attending_welcome"]:checked') && document.querySelector('input[name="attending_welcome"]:checked').value)?document.querySelector('input[name="attending_welcome"]:checked').value : null,
+							attending_brunch: (document.querySelector('input[name="attending_brunch"]:checked') && document.querySelector('input[name="attending_brunch"]:checked').value)?document.querySelector('input[name="attending_brunch"]:checked').value : null,
+							shuttle: (document.querySelector('input[name="shuttle"]:checked') && document.querySelector('input[name="shuttle"]:checked').value)?document.querySelector('input[name="shuttle"]:checked').value : null,
+							notes: $("textarea").val()
+						};
+						//quick n dirty validation
+						if(	postData["attending"] == "Y" &&
+								(
+									!postData["inviteCode"] ||
+									!postData["attending_welcome"] ||
+									!postData["attending_brunch"] ||
+									!postData["shuttle"]
+								)
+						){
+							alert("Please fill out all applicable fields.");
+							$('#rsvp_modal').iziModal('stopLoading');
+							return;
+						}
+						console.log("Submitting confirmation: "+JSON.stringify(postData));
+						$.ajax({
+							url: "http://www.levinelabs.com/rsvp-ajax.php",
+							method: "post",
+							data: postData,
+							dataType: "json"
+						}).done(function(data){
+							console.log("Response: "+JSON.stringify(data));
+							if(data && data.status === "SUCCESS"){
+									var _html  = "<div class='grid-x grid-padding-x rsvp_response'>";
+									if(data.responseHeadline){
+										_html += 	"<h1>"+data.responseHeadline+"</h1>";
+									}
+									if(data.responseText){
+										_html += 	"<div class='medium-12 cell'>";
+											_html += 	"<p>"+data.responseText+"</p>";
+										_html += 	"</div>";
+									}
+									// _html += "<div class='grid-x grid-padding-x>'";
+									// _html += 	"<div class='medium-12 cell'>";
+									// _html += 		"<p>Name on invitation <span id='inviteName'>"+data.record.name+"</span></p>";
+									// _html += 	"</div>";
+									// _html += 	"<div class='medium-12 cell'>";
+									// _html += 		"<p>Size of Party<span id='inviteSize'>"+data.record.size+"</span></p>";
+									// _html += 	"</div>";
+									// _html += "</div>";
+									// _html += 	"<div class='medium-12 cell'>";
+									// _html += 		"<div class='confirm button success'></div>";
+									// _html += 	"</div>";
+									// _html += "<div class='grid-x grid-padding-x>'";
+
+										_html += "</div>";
+								$('#rsvp_modal').iziModal('setContent', _html);
+								$('#rsvp_modal').iziModal('stopLoading');
+							}
+						}).fail(function(err, responseText, errorThrown){
+							console.log("Error: "+JSON.stringify(err));
+							console.log(responseText+": "+errorThrown);
+							$('#rsvp_modal').iziModal('stopLoading');
+						});
+
+					});
+				}
+			},
+			error: function(err, responseText, errorThrown){
+				console.log("Error: "+JSON.stringify(err));
+				console.log(responseText+":  "+errorThrown);
+				$('#rsvp_modal').iziModal('stopLoading');
 			}
-		}).fail(function(err){
-			console.log("Error: "+JSON.stringify(err));
-			$('#rsvp_modal').iziModal('stopLoading');
 		});
 		
 	    setTimeout(function(){
@@ -198,7 +274,7 @@ $(document).ready(function(){
 	// 	url: "http://www.levinelabs.com/rsvp-ajax.php",
 	// 	data: {
 	// 		"type": "lookup",
-	// 		"query": "TITS"
+	// 		"query": "BEAR"
 	// 	},
 	// 	dataType: "json"
 	// }).done(function(data){
