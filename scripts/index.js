@@ -87,12 +87,13 @@ $(document).ready(function(){
 	    event.preventDefault();
 		var input = {
 			type: "lookup",
-			query: $("#inviteCode").val().toUpperCase().trim()
+			query: $("#inviteCode").val().toUpperCase().trim(),
+			zipCode: $("#zipCode").val().trim(),
 		};
 		console.log(input);
 
 		//quick n dirty validation
-		if(!input["query"] || input["query"] == ""){
+		if((!input["query"] || input["query"] == "") || (!input["zipCode"] || input["zipCode"] == "")){
 			alert("Please fill out the invite code that came with your reservation.");//error message
 			return;
 		}
