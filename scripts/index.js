@@ -19,6 +19,10 @@ $(document).ready(function(){
 		e.preventDefault();
 	});
 
+	function validateEmail(email) {
+	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	    return re.test(String(email).toLowerCase());
+	}
 
 	// Modal stuff
 	$("#rsvp_modal").iziModal({
@@ -110,12 +114,16 @@ $(document).ready(function(){
 						_html += 	"<div class='medium-12 cell'>";
 						_html += 		"<h1><span id='inviteName'>"+data.record.name+"</span><span id='inviteCode'>("+data.record.code+")</span></h1>";
 						_html += 	"</div>";
-						_html += 	"<div class='medium-12 medium-offset-3 cell switch-field'>";
+						_html += 	"<div class='<medium-6 medium-offset-3 cell switch-field'>";
 						_html += 		"<div class='switch-title'>Attending?</div>";
 						_html += 		"<input type='radio' id='attending_yes' name='attending' value='Y' checked/>";
 						_html += 		"<label for='attending_yes'>Yes</label>";
 						_html += 		"<input type='radio' id='attending_no' name='attending' value='N' />";
 						_html += 		"<label for='attending_no'>No</label>";
+						_html += 	"</div>";
+						_html += 	"<div class='medium-12 cell'>";
+						_html += 		"<label for='email'>Email address (for confirmation)</label>";
+						_html += 		"<input type='text' id='email' name='email' value='"+data.record.email+"'/>";
 						_html += 	"</div>";
 						_html +=	"<div id='if_attending'>";
 						_html += 		"<div class='medium-12 cell attendance'>";
@@ -188,8 +196,10 @@ $(document).ready(function(){
 					$("#rsvp_modal").on("click", "button.confirm", function(event){
 						event.preventDefault();
 						$('#rsvp_modal').iziModal('startLoading');
+						var _email = $("#email").val().trim();
 						var postData = {
 							type: "confirm",
+							email: _email,
 							inviteCode: $("#inviteCode").html().trim().replace(/\(|\)/g, ""), //removing parenthesis
 							num_attending: $(".attendance select").val(),
 							attending: $("input[name=attending]:checked").val(),
@@ -211,6 +221,13 @@ $(document).ready(function(){
 							$('#rsvp_modal').iziModal('stopLoading');
 							return;
 						}
+
+						if(!validateEmail(_email)){
+							alert("Email invalid. Please check spelling and try again!");
+							$('#rsvp_modal').iziModal('stopLoading');
+							return;
+						}
+
 						console.log("Submitting confirmation: "+JSON.stringify(postData));
 						$.ajax({
 							url: "http://www.levinelabs.com/rsvp-ajax.php",
