@@ -272,6 +272,10 @@ a.destination_point i:after {
     overflow: hidden;
 }
 
+#rsvp_modal {
+	
+}
+
 #rsvp_modal .switch-field label { /*needed more specificity*/
   float: left;
   margin: 0px;
