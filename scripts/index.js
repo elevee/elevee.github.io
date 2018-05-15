@@ -39,7 +39,7 @@ $(document).ready(function(){
 	 //    iconColor: '',
 	 //    rtl: false,
 	 //    top: null,
-	 //    setTop: 100,
+	    // setTop: 100,
 	 //    bottom: null,
 	 //    borderBottom: true,
 	 //    padding: 0,
@@ -56,7 +56,7 @@ $(document).ready(function(){
 	 //    history: false,
 	 //    restoreDefaultContent: false,
 	 //    autoOpen: 0, // Boolean, Number
-	 //    bodyOverflow: false,
+	    bodyOverflow: true,
 	 //    fullscreen: false,
 	 //    openFullscreen: false,
 	 //    closeOnEscape: true,
@@ -76,10 +76,18 @@ $(document).ready(function(){
 	 //    onFullscreen: function(){},
 	 //    onResize: function(){},
 	 //    onOpening: function(){},
-	 //    onOpened: function(){},
+	    // onOpened: function(modal){
+	    	// setTimeout(function(){
+	    	// 	$("#rsvp_modal .iziModal-wrap").scrollTop(0);
+	    	// }, 1);
+	    // },
 	 //    onClosing: function(){},
 	 //    onClosed: function(){},
-	 //    afterRender: function(){}
+	    afterRender: function(){
+	    	setTimeout(function(){
+	    		// $("#rsvp_modal").css("max-height", "400px");
+	    	}, 1000);
+	    }
 	});
 
 	$(document).on('click', '.trigger', function (event) {
@@ -111,72 +119,83 @@ $(document).ready(function(){
 			success: function(data){
 				console.log("Response: "+JSON.stringify(data));
 				if(data && data.status === "SUCCESS"){
-					var _html  = "<div class='grid-x grid-padding-x>'";
+					var _html  = "<div class='grid-x grid-padding-x'>";
 						_html += 	"<div class='medium-12 cell'>";
 						_html += 		"<h1><span id='inviteName'>"+data.record.name+"</span><span id='inviteCode'>("+data.record.code+")</span></h1>";
 						_html += 	"</div>";
-						_html += 	"<div class='<medium-6 medium-offset-3 cell switch-field'>";
+						_html += "</div>";
+						_html += "<div class='grid-x grid-padding-x'>";
+						_html += 	"<div class='<medium-12 medium-offset-3 cell switch-field'>";
 						_html += 		"<div class='switch-title'>Attending?</div>";
 						_html += 		"<input type='radio' id='attending_yes' name='attending' value='Y' checked/>";
 						_html += 		"<label for='attending_yes'>Yes</label>";
 						_html += 		"<input type='radio' id='attending_no' name='attending' value='N' />";
 						_html += 		"<label for='attending_no'>No</label>";
 						_html += 	"</div>";
-						_html += 	"<div class='medium-12 cell'>";
+						_html += "</div>";
+						_html += 	"<div class='medium-6 cell'>";
 						_html += 		"<label for='email'>Email address (for confirmation)</label>";
 						_html += 		"<input type='text' id='email' name='email' value='"+data.record.email+"'/>";
 						_html += 	"</div>";
 						_html +=	"<div id='if_attending'>";
-						_html += 		"<div class='medium-12 cell attendance'>";
-						_html += 			"<select>";
-											var i = 1;
-											while(i <= parseInt(data.record.size)){
-												_html += "<option value='"+i+"' "+(data.record.num_attending == i ? "selected=selected": "")+">"+i+"</option>";
-												i++;
-											}
-						_html += 			"</select>";
-						_html += 			"<span>of <span id='inviteSize'>"+data.record.size+"</span> attending</span>";
-						_html += 		"</div>";
-						_html += 		"<div class='medium-12 cell'>";
-						_html += 			"<p>Attending Welcome Cocktails? (Fri 9/7 5p)</p>";
-						_html += 			"<input type='radio' id='attending_welcome1' name='attending_welcome' value='Y' "+(data.record.attending_welcome == "Y" ? "checked" : "")+"/>";
-						_html += 			"<label for='attending_welcome'>Yes</label>";
-						_html += 			"<input type='radio' id='attending_welcome2' name='attending_welcome' value='N' "+(data.record.attending_welcome == "N" ? "checked" : "")+"/>";
-						_html += 			"<label for='attending_welcome'>No</label>";
-						_html += 		"</div>";
-						_html += 		"<div class='medium-12 cell'>";
-						_html += 			"<p>Choose pre-wedding shuttle (Sat 9/8)</p>";
-											data.shuttles.forEach(function(shuttle){
-												if(parseInt(shuttle.remaining) > parseInt(data.record.size)){
-													_html += "<input type='radio' id='shuttle"+shuttle.number+"' name='shuttle' value='"+shuttle.number+"' "+(data.record.shuttle === shuttle.number ? "checked" : "")+"/>";
-													_html += "<label for='shuttle"+shuttle.number+"'>"+shuttle.time+" ("+shuttle.remaining+" seat(s) remaining)</label><br/>";
-												} else {
-													_html += "<span>"+shuttle.time+" (Full)</span><br/>";
+						_html += 		"<div class='grid-x grid-padding-x'>";
+						_html += 			"<div class='medium-6 cell attendance'>";
+						_html += 				"<select>";
+												var i = 1;
+												while(i <= parseInt(data.record.size)){
+													_html += "<option value='"+i+"' "+(data.record.num_attending == i ? "selected=selected": "")+">"+i+"</option>";
+													i++;
 												}
-											});
-						_html += 			"<input type='radio' id='shuttle_none' name='shuttle' value='self' "+(data.record.shuttle === "self" ? "checked" : "")+"/>";
-						_html += 			"<label for='shuttle_none'>None / Self transport </label><br/>";
+						_html += 				"</select>";
+						_html += 				"<span>of <span id='inviteSize'>"+data.record.size+"</span> attending</span>";
+						_html += 			"</div>";
+						_html += 		"</div>";
+						_html += 		"<div class='grid-x grid-padding-x'>";
+						_html += 			"<div class='medium-6 cell'>";
+						_html += 				"<p>Attending Welcome Cocktails? (Fri 9/7 5p)</p>";
+						_html += 				"<input type='radio' id='attending_welcome1' name='attending_welcome' value='Y' "+(data.record.attending_welcome == "Y" ? "checked" : "")+"/>";
+						_html += 				"<label for='attending_welcome'>Yes</label>";
+						_html += 				"<input type='radio' id='attending_welcome2' name='attending_welcome' value='N' "+(data.record.attending_welcome == "N" ? "checked" : "")+"/>";
+						_html += 				"<label for='attending_welcome'>No</label>";
+						_html += 			"</div>";
+						_html += 			"<div class='medium-6 cell'>";
+						_html += 				"<p>Choose pre-wedding shuttle (Sat 9/8)</p>";
+												data.shuttles.forEach(function(shuttle){
+													if(parseInt(shuttle.remaining) > parseInt(data.record.size)){
+														_html += "<input type='radio' id='shuttle"+shuttle.number+"' name='shuttle' value='"+shuttle.number+"' "+(data.record.shuttle === shuttle.number ? "checked" : "")+"/>";
+														_html += "<label for='shuttle"+shuttle.number+"'>"+shuttle.time+" ("+shuttle.remaining+" seat(s) remaining)</label><br/>";
+													} else {
+														_html += "<span>"+shuttle.time+" (Full)</span><br/>";
+													}
+												});
+						_html += 				"<input type='radio' id='shuttle_none' name='shuttle' value='self' "+(data.record.shuttle === "self" ? "checked" : "")+"/>";
+						_html += 				"<label for='shuttle_none'>None / Self transport </label><br/>";
+			    		_html += 			"</div>";
 			    		_html += 		"</div>";
-			    		_html += 		"<div class='medium-12 cell'>";
-			    		_html += 			"<p>Attending Bagel Brunch?  (Sun 9/9 10a)</p>";
-			    		_html += 			"<input type='radio' id='attending_brunch1' name='attending_brunch' value='Y' "+(data.record.attending_brunch == "Y" ? "checked" : "")+"/>";
-			    		_html += 			"<label for='attending_brunch'>Yes</label>";
-			    		_html += 			"<input type='radio' id='attending_brunch2' name='attending_brunch' value='N' "+(data.record.attending_brunch == "N" ? "checked" : "")+"/>";
-			    		_html += 			"<label for='attending_brunch'>No</label>";
-			    		_html += 		"</div>";
+			    		_html += 		"<div class='grid-x grid-padding-x'>";
+				    	_html += 			"<div class='medium-6 cell'>";
+				    	_html += 				"<p>Attending Bagel Brunch?  (Sun 9/9 10a)</p>";
+				    	_html += 				"<input type='radio' id='attending_brunch1' name='attending_brunch' value='Y' "+(data.record.attending_brunch == "Y" ? "checked" : "")+"/>";
+				    	_html += 				"<label for='attending_brunch'>Yes</label>";
+				    	_html += 				"<input type='radio' id='attending_brunch2' name='attending_brunch' value='N' "+(data.record.attending_brunch == "N" ? "checked" : "")+"/>";
+				    	_html += 				"<label for='attending_brunch'>No</label>";
+				    	_html += 			"</div>";
+				    	_html += 		"</div>";
 			    		_html += 	"</div>";
 			    		_html += 	"<div class='medium-12 cell'>";
 			    		_html += 		"<label for='inviteNotes'>Notes/Remarks (limit 200)</label>";
 			    		_html += 		"<textarea id='inviteNotes' maxlength='200'>"+(data.record.notes ? data.record.notes : "")+"</textarea>";
 			    		_html += 	"</div>";
 					    _html += "</div>";
-					    _html += 	"<div class='medium-12 cell'>";
+					    _html += "<div class='grid-x grid-padding-x'>";
+					    _html += 	"<div class='medium-2 medium-offset-5 cell'>";
 					    // _html += 		"<div class='confirm button success' data-decision='yes'>Going</div>";
 					    _html += 		"<button class='confirm button'>Submit</button>";
 					    _html += 	"</div>";
-					    _html += "<div class='grid-x grid-padding-x>'";
-
 					    _html += "</div>";
+					    // _html += "<div class='grid-x grid-padding-x>'";
+
+					    // _html += "</div>";
 					$('#rsvp_modal').iziModal('setContent', _html);
 					$('#rsvp_modal').iziModal('stopLoading');
 

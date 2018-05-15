@@ -239,10 +239,26 @@ a.destination_point i:after {
 	content: "Paso Robles";
 }
 
+/*MODAL*/
+
+#rsvp_modal {
+	max-height: 500px;
+}
+
 .iziModal-wrap {
 	background-color: white;
 	position: absolute;
 	padding: 10px;
+	max-height: 400px;
+	overflow: scroll;
+}
+
+.iziModal-content {
+	max-height: 400px;
+}
+
+.iziModal-wrap .attendance {
+	margin-top: 25px;
 }
 
 .iziModal-wrap .attendance select {
@@ -272,9 +288,16 @@ a.destination_point i:after {
     overflow: hidden;
 }
 
-#rsvp_modal {
-	
+/*.flex-grid {
+	display: flex;
+	justify-content: center;
 }
+
+.col {
+	flex: 1;
+	background-color: yellow;
+	width: 50%;
+}*/
 
 #rsvp_modal .switch-field label { /*needed more specificity*/
   float: left;
