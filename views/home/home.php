@@ -1,0 +1,183 @@
+<div class="grid-container">
+	<span class="headline">Danielle  &  Eric</span>
+	<ul class="details">
+		<li>September 8, 2018</li>
+		<li>Tooth and Nail Winery</li>
+		<li>Paso Robles, Ca</li>
+	</ul>
+	<div class="inner-container">
+		<section id='info'>
+			<h4>Welcome to our super thrown-together wedding website, you guys!</h4>
+			<div class="grid-x callout intro">
+				<div class="small-6 cell blurb">
+					<p>We're excited to celebrate with you all! More information to come.</p>
+				</div>
+				<div class="small-6 cell">
+					<img src="toothandnail.jpg">
+				</div>
+			</div>
+
+			<div class="grid-x callout alert wine">
+				<div class="small-6 cell">
+					<a href="https://pasoroblesdailynews.com/wp-content/uploads/2016/05/Paso-Robles-Winery-Map.jpg">
+						<div class="wine_map">
+							<img src="https://pasoroblesdailynews.com/wp-content/uploads/2015/05/Paso-Robles-Winery-Map-2.jpg">
+						</div>
+					</a>
+					<span>Click to enlarge/print</span>
+				</div>
+				<div class="small-6 cell blurb">
+					<h5>Wine Tasting</h5>
+					<p>Paso Robles is a wine-producing region in the Central Coast of California.</p>
+					<p>Here is just an idea of how many will be nearby. We'll be sharing a few of our favorites as the day gets closer.</p>
+				</div>
+			</div>
+
+			<!-- <div class='save_the_date'>
+				<div class='cork'></div>
+			</div> -->
+			<!-- <h3>Haven't Rsvped Yet?</h3>
+			<div>
+				<p>RSVP Module Here</p>
+				<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+				<form action="https://getsimpleform.com/messages?form_api_token=<form_api_token>" method="post">
+
+				  the redirect_to is optional, the form will redirect to the referrer on submission
+				  <input type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>' />
+
+				   all your input fields here.... 
+				   <input type='text' name='test' />
+
+				  <input type='submit' value='Test form' />
+				</form>
+			</div>  -->
+		</section>
+		<section id='proposal'>
+			<!-- <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+			   <img src="proposal_thumb.jpg" style="cursor:pointer" />
+			</div>
+			<div style="display:none"> -->
+			    <div class="responsive-embed">
+				  <iframe width="1080" height="720" src="https://youtube.com/embed/c_EHzN_xpPM?" frameborder="0" allowfullscreen></iframe>
+				</div>
+			<!-- </div> -->
+		</section>
+		<section id="travel">
+			<h4>Getting Here</h4>
+			<div class="grid-x callout">
+				<div class="large-5 cell">
+					<h5>Airports</h5>
+					<p>If you're flying in, San Luis Obispo is the closest airport to minimize drive time. Chances are, though, that there will be more flight & car rental availability with the larger airports. Below are the closest airports & distances away from Paso:</p>
+					<table>
+						<tr data-airport="sbp">
+							<td>San Luis Obispo County Regional Airport (SBP)</td>
+							<td>31mi / 35min</td>
+							<td>I-101N (<a href="https://www.google.com/maps/dir/San+Luis+Obispo+County+Regional+Airport,+Airport+Drive,+San+Luis+Obispo,+CA/Courtyard+by+Marriott+Paso+Robles,+South+Vine+Street,+Paso+Robles,+CA/@35.4261277,-120.9481672,10z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x80ecf6bf3876b9f1:0xf486acd07a0f3bd2!2m2!1d-120.6420002!2d35.2375424!1m5!1m1!1s0x80ecc53e5799b711:0x8b3aa68b76b7c23d!2m2!1d-120.6915441!2d35.6135852!3e0">map</a>)</td>
+						</tr>
+						<tr data-airport="mry">
+							<td>Monterey Regional Airport (MRY)</td>
+							<td>115mi / 1h 45min</td>
+							<td>I-101S (<a href="https://www.google.com/maps/dir/Monterey+Regional+Airport,+Fred+Kane+Drive,+Monterey,+CA/Courtyard+by+Marriott+Paso+Robles,+South+Vine+Street,+Paso+Robles,+CA/@36.1176371,-121.8274822,9z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808de50600eb3837:0x873e7decc7732b76!2m2!1d-121.8491091!2d36.588269!1m5!1m1!1s0x80ecc53e5799b711:0x8b3aa68b76b7c23d!2m2!1d-120.6915441!2d35.6135852!3e0">map</a>)</td>
+						</tr>
+						<tr data-airport="sjc">
+							<td>Norman Y Mineta San Jose International Airport (SJC)</td>
+							<td>161mi / 2h 22min</td>
+							<td>I-101S (<a href="https://www.google.com/maps/dir/Norman+Y.+Mineta+San+Jose+International+Airport,+Airport+Boulevard,+San+Jose,+CA/Courtyard+by+Marriott+Paso+Robles,+South+Vine+Street,+Paso+Robles,+CA/@36.4873514,-122.427939,8z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808fcbc3fab3c59b:0xbcfa443f6df67e3e!2m2!1d-121.9289375!2d37.3639472!1m5!1m1!1s0x80ecc53e5799b711:0x8b3aa68b76b7c23d!2m2!1d-120.6915441!2d35.6135852!3e0">map</a>)</td>
+						</tr>
+						<tr data-airport="sfo">
+							<td>San Francisco International Airport (SFO)</td>
+							<td>161mi / 2h 54min</td>
+							<td>I-101S (<a href="https://www.google.com/maps/dir/San+Francisco+Airport+(SFO),+San+Francisco,+CA/Courtyard+by+Marriott+Paso+Robles,+South+Vine+Street,+Paso+Robles,+CA/@36.6121624,-122.3005812,8z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808f778c55555555:0xa4f25c571acded3f!2m2!1d-122.3789554!2d37.6213129!1m5!1m1!1s0x80ecc53e5799b711:0x8b3aa68b76b7c23d!2m2!1d-120.6915441!2d35.6135852!3e0">map</a>)</td>
+						</tr>
+						<tr data-airport="lax">
+							<td>Los Angeles International Airport (LAX)</td>
+							<td>215mi / 3h 24min</td>
+							<td>I-405N → I-5N → Hwy 46 West (<a href="https://www.google.com/maps/dir/Los+Angeles+International+Airport,+1+World+Way,+Los+Angeles,+CA+90045/Courtyard+by+Marriott+Paso+Robles,+120+S+Vine+St,+Paso+Robles,+CA+93446/@34.8717149,-120.3807985,8z/data=!4m14!4m13!1m5!1m1!1s0x80c2b0d213b24fb5:0x77a87b57698badf1!2m2!1d-118.40853!2d33.9415889!1m5!1m1!1s0x80ecc53e5799b711:0x8b3aa68b76b7c23d!2m2!1d-120.6915441!2d35.6135852!3e0">map</a>)</td>
+						</tr>
+					</table>
+				</div>
+				<div class="large-7 cell hide-for-small-only">
+					<a id="area2" class="area" href="#"></a>
+					
+					<div id="ca_airport_map">
+						<img src="ca_map.jpg" alt="Nearby airports to Paso Robles" width=500 height=500 usemap="#airport_map">
+						<a style="left: 278; top: 384;" data-airport="lax" class="airport_point" href="#">
+							<i class="fa fa-lg fa-plane" aria-hidden="true"></i>
+						</a>
+						<a style="left: 127; top: 278;" data-airport="sfo" class="airport_point left-label" href="#">
+							<i class="fa fa-lg fa-plane" aria-hidden="true"></i>
+						</a>
+						<a style="left: 156; top: 288;" data-airport="sjc" class="airport_point" href="#">
+							<i class="fa fa-lg fa-plane" aria-hidden="true"></i>
+						</a>
+						<a style="left: 187; top: 342;" data-airport="sbp" class="airport_point left-label" href="#">
+							<i class="fa fa-lg fa-plane" aria-hidden="true"></i>
+						</a>
+						<a style="left: 156; top: 302;" data-airport="mry" class="airport_point left-label" href="#">
+							<i class="fa fa-lg fa-plane" aria-hidden="true"></i>
+						</a>
+						<a style="left: 196; top: 313;" class="destination_point" href="#">
+							<i class="fa fa-lg fa-star" aria-hidden="true"></i>
+						</a>
+					</div>
+
+					<map name="airport_map">
+						<area href="https://facebook.com" alt="Facebook" target="_blank" shape=poly coords="30,100, 140,50, 290,220, 180,280">
+					</map> 
+				</div>
+			</div>
+			
+		</section>
+		<section id="accomodations">
+			<h4>Staying here</h4>
+			<a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lewin-Levine%20Wedding%5Esbppr%60LLWLLWA%7CLLWLLWB%60229.00%60USD%60false%604%609/6/18%609/10/18%608/3/18&app=resvlink&stop_mobi=yes" target='_blank'>
+				<img src="http://cache.marriott.com/propertyimages/s/sbppr/phototour/sbppr_phototour21.jpg?interpolation=progressive-bilinear&downsize=*:423px" class="float-center">
+			</a>
+			<p>The official hotel will be at the <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lewin-Levine%20Wedding%5Esbppr%60LLWLLWA%7CLLWLLWB%60229.00%60USD%60false%604%609/6/18%609/10/18%608/3/18&app=resvlink&stop_mobi=yes" target='_blank'>Courtyard Marriott Paso Robles.</a> This will be the location from which the shuttles will depart before the ceremony and to which they'll arrive for the afterparty.</p>
+			<!-- <table id="hotel_prices">
+				<td>
+					<h3>Blah</h3>
+				</td>
+				<td>Blah</td>
+				<td>Blah</td>
+				<td>Blah</td>
+			</table> -->
+			<p>Friday and Saturday we have secured a discounted rate of <strong>$229</strong>/nt. If you want to take a longer weekend and really enjoy Paso, the rate will be $139/nt on those days. After you book, it will be manually adjusted by the hotel to make sure you get the best deal, so please don't be alarmed if it's showing a higher total.</p>
+			<p><a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Lewin-Levine%20Wedding%5Esbppr%60LLWLLWA%7CLLWLLWB%60229.00%60USD%60false%604%609/6/18%609/10/18%608/3/18&app=resvlink&stop_mobi=yes" class='button' target='_blank'>Reserve your room with our wedding allotment!</a></p>
+		</section>
+	</div>
+		
+</div>
+
+<div id="rsvp_modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+	  <h2 id="modalTitle">Let Us Know You're Coming</h2>
+	  <!-- <p class="lead">Your couch.  It is mine.</p> -->
+	  <p>Please enter the invite code included in your mailed invitation as well as your home zipcode to continue.</p>
+	  <form>
+	  	<div class="grid-container">
+		    <div id="swap" class="grid-x grid-padding-x">
+		      <div class="medium-6 cell">
+		        <label>Invite Code
+		          <input type="text" id="inviteCode" placeholder="Invite code inside your invitation">
+		        </label>
+		        <label>Zip Code
+		          <input type="text" id="zipCode" placeholder="Home Zip">
+		        </label>
+		      </div>
+		    	<!-- <div class="g-recaptcha" data-sitekey="6LcFrjYUAAAAAFcMeaKM2ssD6NaY3Tqa4xU0OF5C"></div> -->
+		    </div>
+		    <div class="grid-x grid-padding-x">
+		    	<input id="lookup" type="submit" class="button" value="Submit">
+		    </div>
+	  	</div>
+	  </form>
+	  <!-- <a class="close-reveal-modal" aria-label="Close" data-izimodal-close="" data-izimodal-transitionout="bounceOutDown">&#215;</a> -->
+	</div>
+
+    <script src="scripts/foundation-6.4.2-complete/js/vendor/what-input.js"></script>
+    <script src="scripts/foundation-6.4.2-complete/js/vendor/foundation.js"></script>
+    
+    <!-- <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script> -->
