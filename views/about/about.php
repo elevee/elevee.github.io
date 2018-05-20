@@ -1,3 +1,3 @@
 <?php
 
-echo("<p>Whatup I'm the about page</p>");
+echo("<h3>How We Met</h3>");

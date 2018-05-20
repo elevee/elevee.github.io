@@ -14,16 +14,6 @@ body {
 
 }
 
-.top-bar {
-	width: 100%;
-	font-family: 'Cabin', sans-serif;
-	opacity: 0.7;
-}
-
-/*.nav {
-	list-style-type: none;
-}*/
-
 .headline {
 	font-family: 'Cabin', sans-serif;
 	/*font-family: 'Farsan', cursive;*/
@@ -72,25 +62,7 @@ body {
 	content: "";
 }*/
 
-.nav {
-	text-align: center;
-	margin-bottom: 0px;
-}
 
-.nav li {
-	display: inline;
-	margin-right: 15px;
-	text-transform: uppercase;
-}
-
-.nav a {
-	color: black;
-}
-
-.nav a:hover {
-	font-weight: bold;
-	border-bottom: 1px solid black;
-}
 
 .inner-container {
 	width: 90%;
