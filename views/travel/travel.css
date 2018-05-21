@@ -1,0 +1,70 @@
+#ca_airport_map {
+	position: relative;
+}
+
+#ca_airport_map img {
+	max-width: none; /*Prevent CA state map image from resizing*/
+}
+
+.fa-plane {
+	color: #f77979;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+}
+
+.fa-star {
+	color: blue;
+}
+
+a.airport_point {
+	width: 15px;
+	height: 15px;
+	display: block;
+	position: absolute;
+	color: blue;
+	background-image: url("../../airport_icon.png");
+}
+
+i:after {
+	color: black;
+	font-size: 14px;
+}
+
+i.fa-plane:hover {
+	color: red;
+}
+
+a[data-airport="lax"] i:after {
+	content: "LAX";
+	font-weight: bold;
+}
+
+a.left-label i:after{
+	margin-left: -44px;
+}
+
+a[data-airport="sfo"] i:after {
+	content: "SFO";
+	font-weight: bold;
+}
+
+a[data-airport="sjc"] i:after {
+	content: "SJC";
+}
+
+a[data-airport="sbp"] i:after {
+	content: "SBP";
+}
+
+a[data-airport="mry"] i:after {
+	content: "MRY";
+}
+
+a.destination_point {
+	position: absolute;
+}
+
+a.destination_point i:after {
+	content: "Paso Robles";
+}

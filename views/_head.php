@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Farsan" rel="stylesheet">
 	<link rel='stylesheet' type='text/css' href='/scripts/foundation-6.4.2-complete/css/foundation.css' />
 	<link rel='stylesheet' type='text/css' href='/node_modules/izimodal/css/iziModal.min.css' />
+	<link rel='stylesheet' type='text/css' href='index.css' />
 	<link rel='stylesheet' type='text/css' href='/views/_header/_header.css' />
 
 	<?php //page specific styles

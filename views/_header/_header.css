@@ -1,11 +1,21 @@
 .top-bar {
-	width: 100%;
+	/*width: 100%;*/
 	font-family: 'Cabin', sans-serif;
 	opacity: 0.7;
 }
 
+.headline {
+	font-family: 'Cabin', sans-serif;
+	/*font-family: 'Farsan', cursive;*/
+	font-size: 80px;
+	margin: 0px;
+	line-height: 98%;
+	/*border-bottom: 1px solid gray;*/
+}
+
 .nav {
-	text-align: center;
+	/*text-align: center;*/
+	margin: 0 auto;
 	margin-bottom: 0px;
 }
 
