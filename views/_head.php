@@ -1,12 +1,12 @@
 <html>
 <head>
-	<title><?php echo(isset($args["nav_label"]) && is_string($args["nav_label"]) ? $args["nav_label"]." - " : ""); ?>Wedding of Danielle Lewin & Eric Levine</title>
+	<title><?php echo(isset($args["whitelist"][$args["nav"]]["label"]) && is_string($args["whitelist"][$args["nav"]]["label"]) ? $args["whitelist"][$args["nav"]]["label"]." - " : ""); ?>Wedding of Danielle Lewin & Eric Levine</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description"/>
     <meta name="author">
 	<!-- Stylesheets -->
-	<link href="https://fonts.googleapis.com/css?family=Cabin|Farsan" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pinyon+Script|Cabin|Farsan" rel="stylesheet">
 	<link rel='stylesheet' type='text/css' href='/scripts/foundation-6.4.2-complete/css/foundation.css' />
 	<link rel='stylesheet' type='text/css' href='/node_modules/izimodal/css/iziModal.min.css' />
 	<link rel='stylesheet' type='text/css' href='index.css' />

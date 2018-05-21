@@ -14,7 +14,7 @@ $(document).ready(function(){
 		title: "RSVP",
 		subtitle: "Let Us Know",
 		// overlayColor: 'rgba(0, 0, 0, 0.4)',
-	    // headerColor: '#88A0B9',
+	    headerColor: "#93002A", //'#88A0B9',
 	 //    background: null,
 	 //    theme: '',  // light
 	 //    icon: null,

@@ -1,9 +1,4 @@
 <div class="grid-container">
-	<ul class="details">
-		<li>September 8, 2018</li>
-		<li>Tooth and Nail Winery</li>
-		<li>Paso Robles, Ca</li>
-	</ul>
 	<div class="inner-container">
 		<section id='info'>
 			<h4>Welcome to our super thrown-together wedding website, you guys!</h4>
@@ -53,11 +48,3 @@
 		</section>
 	</div>
 </div>
-
-<script src="scripts/foundation-6.4.2-complete/js/vendor/what-input.js"></script>
-<script src="scripts/foundation-6.4.2-complete/js/vendor/foundation.js"></script>
-
-    <!-- <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script> -->

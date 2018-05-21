@@ -1,19 +1,32 @@
 .top-bar {
 	/*width: 100%;*/
-	font-family: 'Cabin', sans-serif;
+	/*font-family: 'Cabin', sans-serif;*/
 	opacity: 0.7;
 }
 
-.headline {
-	font-family: 'Cabin', sans-serif;
-	/*font-family: 'Farsan', cursive;*/
-	font-size: 80px;
+
+.details {
+	list-style-type: none;
 	margin: 0px;
-	line-height: 98%;
-	/*border-bottom: 1px solid gray;*/
+	text-align: center;
 }
 
+.details li {
+	display: inline;
+}
+
+.details li + li:before {
+	font-family: 'Cabin', sans-serif; /*Other font won't render bullet*/
+	content: "•";
+	padding: 0 5px;
+}
+
+/*.details li:last-child:after {
+	content: "";
+}*/
+
 .nav {
+	font-family: 'MrsEavesSmallCaps', sans-serif;
 	/*text-align: center;*/
 	margin: 0 auto;
 	margin-bottom: 0px;
@@ -31,5 +44,18 @@
 
 .nav a:hover {
 	font-weight: bold;
-	border-bottom: 1px solid black;
+	/*border-bottom: 1px solid black;*/
+	color: #93002A;
+	text-decoration: none;
+}
+
+.top-bar button {
+	width: 100%;
+	margin: 0px;
+	background-color: #93002A;
+}
+
+.top-bar button:hover {
+	background-color: white;
+	color: #93002A;
 }

@@ -1,3 +1,9 @@
 .hotel_prices span {
 	text-align: center;
 }
+
+.button {
+	font-size: 21px;
+	padding: 10px;
+	margin: 0 auto;
+}

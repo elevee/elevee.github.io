@@ -1,10 +1,10 @@
 <div class="grid-container">
 	<section id="travel">
-		<h4>Getting Here</h4>
+		<h2 class="script">Getting Here</h2>
 		<div class="grid-x callout">
 			<div class="large-5 cell">
 				<h5>Airports</h5>
-				<p>If you're flying in, San Luis Obispo is the closest airport to minimize drive time. Chances are, though, that there will be more flight & car rental availability with the larger airports. Below are the closest airports & distances away from Paso:</p>
+				<p>If you're flying in, San Luis Obispo (SBP) is the closest airport to minimize drive time. Chances are, though, that there will be more flight & car rental availability with the larger airports. Below are the closest airports & distances away from Paso:</p>
 				<table>
 					<tr data-airport="sbp">
 						<td>San Luis Obispo County Regional Airport (SBP)</td>

@@ -19,26 +19,6 @@
     border-radius: 20px;
 }*/
 
-.details {
-	list-style-type: none;
-}
-
-.details li {
-	display: inline;
-	font-family: 'Cabin', sans-serif;
-}
-
-.details li + li:before {
-	content: "•";
-	padding: 0 10px;
-}
-
-/*.details li:last-child:after {
-	content: "";
-}*/
-
-
-
 .inner-container {
 	width: 90%;
 	background-color: white;	

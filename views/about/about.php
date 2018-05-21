@@ -1,6 +1,6 @@
 <div class="grid-container">
-	<h3>How We Met</h3>
-	<section id='proposal'>
+	<h2 class="script">How We Met</h2>
+	<section id='proposal' class="callout">
 		<!-- <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
 		   <img src="proposal_thumb.jpg" style="cursor:pointer" />
 		</div>
