@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 	$("#rsvp_modal").iziModal({
 		width: 700,
+		height: 500,
 		closeButton: true,
 		title: "RSVP",
 		subtitle: "Let Us Know",
@@ -63,14 +64,15 @@ $(document).ready(function(){
 	    	// setTimeout(function(){
 	    	// 	$("#rsvp_modal .iziModal-wrap").scrollTop(0);
 	    	// }, 1);
+			// $("#rsvp_modal").css("min-height", 475);
 	    // },
 	 //    onClosing: function(){},
 	 //    onClosed: function(){},
-	    afterRender: function(){
-	    	setTimeout(function(){
+	    // afterRender: function(){
+	    	// setTimeout(function(){
 	    		// $("#rsvp_modal").css("max-height", "400px");
-	    	}, 1000);
-	    }
+	    	// }, 1000);
+	    // }
 	});
 
 	$(document).on('click', '.trigger', function (event) {
@@ -79,7 +81,7 @@ $(document).ready(function(){
 	});
 
 	// Submit on Modal
-	$("form").on('click', "input[type='submit'][id='lookup']", function (event) {
+	$("form").on('click', "button[id='lookup']", function (event) {
 	    event.preventDefault();
 		var input = {
 			type: "lookup",
@@ -116,13 +118,13 @@ $(document).ready(function(){
 						_html += 		"<label for='attending_no'>No</label>";
 						_html += 	"</div>";
 						_html += "</div>";
-						_html += 	"<div class='medium-6 cell'>";
+						_html += 	"<div class='large-12 cell'>";
 						_html += 		"<label for='email'>Email address (for confirmation)</label>";
 						_html += 		"<input type='text' id='email' name='email' value='"+data.record.email+"'/>";
 						_html += 	"</div>";
 						_html +=	"<div id='if_attending'>";
 						_html += 		"<div class='grid-x grid-padding-x'>";
-						_html += 			"<div class='medium-6 cell attendance'>";
+						_html += 			"<div class='large-12 cell attendance'>";
 						_html += 				"<select>";
 												var i = 1;
 												while(i <= parseInt(data.record.size)){
@@ -134,19 +136,19 @@ $(document).ready(function(){
 						_html += 			"</div>";
 						_html += 		"</div>";
 						_html += 		"<div class='grid-x grid-padding-x'>";
-						_html += 			"<div class='medium-6 cell'>";
+						_html += 			"<div class='large-12 cell rsvp_question'>";
 						_html += 				"<p>Attending Welcome Cocktails? (Fri 9/7 5p)</p>";
 						_html += 				"<input type='radio' id='attending_welcome1' name='attending_welcome' value='Y' "+(data.record.attending_welcome == "Y" ? "checked" : "")+"/>";
 						_html += 				"<label for='attending_welcome'>Yes</label>";
 						_html += 				"<input type='radio' id='attending_welcome2' name='attending_welcome' value='N' "+(data.record.attending_welcome == "N" ? "checked" : "")+"/>";
 						_html += 				"<label for='attending_welcome'>No</label>";
 						_html += 			"</div>";
-						_html += 			"<div class='medium-6 cell'>";
+						_html += 			"<div class='large-12 cell rsvp_question'>";
 						_html += 				"<p>Choose pre-wedding shuttle (Sat 9/8)</p>";
 												data.shuttles.forEach(function(shuttle){
 													if(parseInt(shuttle.remaining) > parseInt(data.record.size)){
 														_html += "<input type='radio' id='shuttle"+shuttle.number+"' name='shuttle' value='"+shuttle.number+"' "+(data.record.shuttle === shuttle.number ? "checked" : "")+"/>";
-														_html += "<label for='shuttle"+shuttle.number+"'>"+shuttle.time+" ("+shuttle.remaining+" seat(s) remaining)</label><br/>";
+														_html += "<label for='shuttle"+shuttle.number+"'>"+shuttle.time+/*" ("+shuttle.remaining+" seat(s) remaining)*/"</label><br/>";
 													} else {
 														_html += "<span>"+shuttle.time+" (Full)</span><br/>";
 													}
@@ -156,8 +158,8 @@ $(document).ready(function(){
 			    		_html += 			"</div>";
 			    		_html += 		"</div>";
 			    		_html += 		"<div class='grid-x grid-padding-x'>";
-				    	_html += 			"<div class='medium-6 cell'>";
-				    	_html += 				"<p>Attending Bagel Brunch?  (Sun 9/9 10a)</p>";
+				    	_html += 			"<div class='large-12 cell rsvp_question'>";
+				    	_html += 				"<p>Attending Farewell Brunch?  (Sun 9/9 10a)</p>";
 				    	_html += 				"<input type='radio' id='attending_brunch1' name='attending_brunch' value='Y' "+(data.record.attending_brunch == "Y" ? "checked" : "")+"/>";
 				    	_html += 				"<label for='attending_brunch'>Yes</label>";
 				    	_html += 				"<input type='radio' id='attending_brunch2' name='attending_brunch' value='N' "+(data.record.attending_brunch == "N" ? "checked" : "")+"/>";
@@ -265,6 +267,7 @@ $(document).ready(function(){
 										_html += "</div>";
 								$('#rsvp_modal').iziModal('setContent', _html);
 								$('#rsvp_modal').iziModal('stopLoading');
+								$('#rsvp_modal').css("min-height", "auto");
 							}
 						}).fail(function(err, responseText, errorThrown){
 							console.log("Error: "+JSON.stringify(err));

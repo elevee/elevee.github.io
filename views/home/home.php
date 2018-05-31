@@ -1,29 +1,61 @@
 <div class="grid-container">
 	<div class="inner-container">
+		<section id="cover">
+			<span id="danielle" class="script">Danielle</span>
+			<span class="script">and</span>
+			<span id="eric" class="script">Eric</span>
+		</section>
+		<section id="carousel">
+			<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+			  <div class="orbit-wrapper">
+			    <div class="orbit-controls">
+			      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+			      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+			    </div>
+			    <ul class="orbit-container">
+			      <li class="is-active orbit-slide">
+			        <figure class="orbit-figure">
+			          <img class="orbit-image" src="/img/dip.jpg" alt="">
+			          <!-- <figcaption class="orbit-caption"></figcaption> -->
+			        </figure>
+			      </li>
+			      <li class="orbit-slide">
+			        <figure class="orbit-figure">
+			          <img class="orbit-image" src="/img/kiss_car.jpg" alt="Space">
+			          <!-- <figcaption class="orbit-caption">Lets Rocket!</figcaption> -->
+			        </figure>
+			      </li>
+			      <li class="orbit-slide">
+			        <figure class="orbit-figure">
+			          <img class="orbit-image" src="/img/pizza_laugh.jpg" alt="Making Pizza">
+			          <figcaption class="orbit-caption">Pizza!</figcaption>
+			        </figure>
+			      </li>
+			      <li class="orbit-slide">
+			        <figure class="orbit-figure">
+			          <img class="orbit-image" src="https://placehold.it/1200x600/666&text=Slide-4" alt="Space">
+			          <figcaption class="orbit-caption">Outta This World</figcaption>
+			        </figure>
+			      </li>
+			    </ul>
+			  </div>
+			  <nav class="orbit-bullets">
+			    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+			    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+			    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+			    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+			  </nav>
+			</div>
+		</section>
 		<section id='info'>
-			<h4>Welcome to our super thrown-together wedding website, you guys!</h4>
+			<!-- <h4>Welcome to our super thrown-together wedding website, you guys!</h4> -->
 			<div class="grid-x callout intro">
 				<div class="small-6 cell blurb">
-					<p>We're excited to celebrate with you all! More information to come.</p>
+					<p>We're excited to celebrate with you all!</p>
+					<p>Make sure to RSVP above in the upper-right by July 11th.</p>
 				</div>
 				<div class="small-6 cell">
 					<img src="toothandnail.jpg">
-				</div>
-			</div>
-
-			<div class="grid-x callout alert wine">
-				<div class="small-6 cell">
-					<a href="https://pasoroblesdailynews.com/wp-content/uploads/2016/05/Paso-Robles-Winery-Map.jpg">
-						<div class="wine_map">
-							<img src="https://pasoroblesdailynews.com/wp-content/uploads/2015/05/Paso-Robles-Winery-Map-2.jpg">
-						</div>
-					</a>
-					<span>Click to enlarge/print</span>
-				</div>
-				<div class="small-6 cell blurb">
-					<h5>Wine Tasting</h5>
-					<p>Paso Robles is a wine-producing region in the Central Coast of California.</p>
-					<p>Here is just an idea of how many will be nearby. We'll be sharing a few of our favorites as the day gets closer.</p>
 				</div>
 			</div>
 

@@ -1,0 +1,9 @@
+#weekend ul {
+	list-style-type: none;
+	font-size: 23px;
+	text-align: center;
+}
+
+#weekend h4 {
+	margin-left: 20px;
+}

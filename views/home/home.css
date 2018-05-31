@@ -41,8 +41,15 @@ section {
     background-size: cover;*/
 }
 
-section#proposal{
-	padding: 0px 0px;
+#cover {
+	padding-top: 15px;
+}
+
+#cover .script {
+	font-family: 'Burgues Script';
+	font-size: 117px;
+	margin-right: 33px;
+	/*transform: rotate(-20deg);*/
 }
 
 #info {

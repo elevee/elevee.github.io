@@ -1,4 +1,7 @@
-#proposal div {
-	/*width: 800px;
-	height: 515px;*/
+.story p {
+	font-size: 20px;
+}
+
+.story .cell {
+	padding: 5px;
 }

@@ -16,7 +16,9 @@
 	    	<!-- <div class="g-recaptcha" data-sitekey="6LcFrjYUAAAAAFcMeaKM2ssD6NaY3Tqa4xU0OF5C"></div> -->
 	    </div>
 	    <div class="grid-x grid-padding-x">
-	    	<input id="lookup" type="submit" class="button" value="Submit">
+	    	<div class="submit_button">
+	    		<button id="lookup" class="button">Submit</button>
+	    	</div>
 	    </div>
   	</div>
   </form>

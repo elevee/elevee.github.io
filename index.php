@@ -42,6 +42,10 @@ $whitelist = array(
 		"header" => "Paso",
 		"label"  => "Paso",
 	),
+	"faq"				=> array(
+		"header" => "FAQ",
+		"label"  => "FAQ",
+	),
 );
 $route_pieces = explode("/", $_SERVER["REQUEST_URI"]);
 $is_known_route = in_array($route_pieces[1], array_keys($whitelist));

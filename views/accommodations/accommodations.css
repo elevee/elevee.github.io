@@ -2,8 +2,18 @@
 	text-align: center;
 }
 
-.button {
+#accommodations button {
 	font-size: 21px;
 	padding: 10px;
 	margin: 0 auto;
+	background-color: #93002A;
+}
+
+button a {
+	color: white;
+}
+
+button:hover {
+	background-color: white;
+	color: #93002A;
 }
