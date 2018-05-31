@@ -60,24 +60,35 @@ $(document).ready(function(){
 	 //    onFullscreen: function(){},
 	 //    onResize: function(){},
 	 //    onOpening: function(){},
-	    // onOpened: function(modal){
+	    onOpened: function(modal){
 	    	// setTimeout(function(){
 	    	// 	$("#rsvp_modal .iziModal-wrap").scrollTop(0);
 	    	// }, 1);
-			// $("#rsvp_modal").css("min-height", 475);
-	    // },
+	    },
 	 //    onClosing: function(){},
-	 //    onClosed: function(){},
-	    // afterRender: function(){
+	    onClosed: function(){
+	    	$("#rsvp_modal").iziModal("resetContent");
+	    },
+	    afterRender: function(){
 	    	// setTimeout(function(){
-	    		// $("#rsvp_modal").css("max-height", "400px");
+	    	// 	$("#rsvp_modal").css("max-height", "400px");
 	    	// }, 1000);
-	    // }
+	  //   	setTimeout(function(){
+			// 	if($("button#lookup").is(":visible")){
+			// 		$("#rsvp_modal").css("min-height", "475px");
+			// 	}
+			// }, 1000);
+	    }
 	});
 
 	$(document).on('click', '.trigger', function (event) {
 	    event.preventDefault();
 	    $('#rsvp_modal').iziModal('open');
+	});
+
+	$(document).on('click', "button.reset", function (event) {
+		$('#rsvp_modal').iziModal('resetContent');
+		$("#rsvp_modal").css("min-height", "475px");
 	});
 
 	// Submit on Modal
@@ -88,11 +99,11 @@ $(document).ready(function(){
 			query: $("#inviteCode").val().toUpperCase().trim(),
 			zipCode: $("#zipCode").val().trim(),
 		};
-		console.log(input);
+		// console.log(input);
 
 		//quick n dirty validation
 		if((!input["query"] || input["query"] == "") || (!input["zipCode"] || input["zipCode"] == "")){
-			alert("Please fill out the invite code that came with your reservation.");//error message
+			alert("Please fill out the invite code that came with your reservation & home zip code.");//error message
 			return;
 		}
 		
@@ -242,29 +253,29 @@ $(document).ready(function(){
 						}).done(function(data){
 							console.log("Response: "+JSON.stringify(data));
 							if(data && data.status === "SUCCESS"){
-									var _html  = "<div class='grid-x grid-padding-x rsvp_response'>";
-									if(data.responseHeadline){
-										_html += 	"<h1>"+data.responseHeadline+"</h1>";
-									}
-									if(data.responseText){
-										_html += 	"<div class='medium-12 cell'>";
-											_html += 	"<p>"+data.responseText+"</p>";
-										_html += 	"</div>";
-									}
-									// _html += "<div class='grid-x grid-padding-x>'";
-									// _html += 	"<div class='medium-12 cell'>";
-									// _html += 		"<p>Name on invitation <span id='inviteName'>"+data.record.name+"</span></p>";
-									// _html += 	"</div>";
-									// _html += 	"<div class='medium-12 cell'>";
-									// _html += 		"<p>Size of Party<span id='inviteSize'>"+data.record.size+"</span></p>";
-									// _html += 	"</div>";
-									// _html += "</div>";
-									// _html += 	"<div class='medium-12 cell'>";
-									// _html += 		"<div class='confirm button success'></div>";
-									// _html += 	"</div>";
-									// _html += "<div class='grid-x grid-padding-x>'";
+								var _html  = "<div class='grid-x grid-padding-x rsvp_response'>";
+								if(data.responseHeadline){
+									_html += 	"<h1>"+data.responseHeadline+"</h1>";
+								}
+								if(data.responseText){
+									_html += 	"<div class='medium-12 cell'>";
+										_html += 	"<p>"+data.responseText+"</p>";
+									_html += 	"</div>";
+								}
+								// _html += "<div class='grid-x grid-padding-x>'";
+								// _html += 	"<div class='medium-12 cell'>";
+								// _html += 		"<p>Name on invitation <span id='inviteName'>"+data.record.name+"</span></p>";
+								// _html += 	"</div>";
+								// _html += 	"<div class='medium-12 cell'>";
+								// _html += 		"<p>Size of Party<span id='inviteSize'>"+data.record.size+"</span></p>";
+								// _html += 	"</div>";
+								// _html += "</div>";
+								// _html += 	"<div class='medium-12 cell'>";
+								// _html += 		"<div class='confirm button success'></div>";
+								// _html += 	"</div>";
+								// _html += "<div class='grid-x grid-padding-x>'";
 
-										_html += "</div>";
+									_html += "</div>";
 								$('#rsvp_modal').iziModal('setContent', _html);
 								$('#rsvp_modal').iziModal('stopLoading');
 								$('#rsvp_modal').css("min-height", "auto");
@@ -276,6 +287,31 @@ $(document).ready(function(){
 						});
 
 					});
+				} else {
+					if(data && data.status === "ERROR"){
+						if(data.responseText){
+							var _html = "<p>"+data.responseText+"</p>";
+						}
+						$(".lookup_error").html(_html);
+						// var _html  = "<div class='grid-x grid-padding-x rsvp_response'>";
+						// if(data.responseHeadline){
+						// 	_html += 	"<h1>"+data.responseHeadline+"</h1>";
+						// }
+						// if(data.responseText){
+						// 	_html += 	"<div class='medium-12 cell'>";
+						// 		_html += 	"<p>"+data.responseText+"</p>";
+						// 	_html += 	"</div>";
+						// }
+						// _html += "</div>";
+						// _html += "<div class='grid-x grid-padding-x'>";
+					 //    _html += 	"<div class='medium-2 medium-offset-5 cell'>";
+					 //    _html += 		"<button class='reset button'>Try Again</button>";
+					 //    _html += 	"</div>";
+					 //    _html += "</div>";
+						// $('#rsvp_modal').iziModal('setContent', _html);
+						$('#rsvp_modal').iziModal('stopLoading');
+						// $('#rsvp_modal').css("min-height", "auto");
+					}
 				}
 			},
 			error: function(err, responseText, errorThrown){

@@ -5,6 +5,7 @@
   <form>
   	<div class="grid-container">
 	    <div id="swap" class="grid-x grid-padding-x">
+	      <div class="lookup_error"></div>
 	      <div class="medium-6 cell">
 	        <label>Invite Code
 	          <input type="text" id="inviteCode" placeholder="Invite code inside your invitation">

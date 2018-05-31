@@ -3,6 +3,13 @@
 	<section class="story callout">
 		<div class="grid-x">
 			<div class="cell large-6 columns">
+				<div class="grid-x">
+					<div class="cell large-5 large-offset-4">
+						<div class="headshot" data-role="bride">
+							<!-- <img src="/img/danielle_hs.jpg" alt="Danielle"> -->
+						</div>
+					</div>
+				</div>
 				<h4>SHE SAYS:</h4>
 				<p>I really didn’t want to do the online dating thing. But why not? My BFF Cori said Tinder was fun! And Candice, heretoforewith known as my Fairy Godmother, offered [demanded] to approve anyone who wanted to chat with me online.</p>
 
@@ -29,6 +36,14 @@
 				<p>We’ve been to games and wineries, pools and hot tubs, learned to scuba and cooked a ridiculous amount of food. Every day keeps getting better and I can’t wait for the next!</p>
 			</div>
 			<div class="cell large-6 columns">
+				<div class="grid-x">
+					<div class="cell large-5 large-offset-4">
+						<div class="headshot" data-role="groom">
+							<!-- <img src="/img/eric_hs.jpg" alt="Danielle"> -->
+							<!-- div. -->
+						</div>
+					</div>
+				</div>
 				<h4>HE SAYS:</h4>
 				<p>I had been on the apps for a while, and learned that you have to have low expectations.</p>
 				<p>It didn't take long to realize that a Danielle date was not going to be like the other ones. She was beautiful, whip smart, conversation flowed, and I felt like I had known her for years.</p>

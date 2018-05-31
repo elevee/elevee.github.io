@@ -1,6 +1,6 @@
 <div class="grid-container">
 	<h2 class='script'>Weekend Agenda</h2>
-	<section id="weekend" class="">
+	<section id="weekend" class="callout">
 		<h4>Friday, September 7</h4>
 			<ul>
 				<li>Welcome Reception</li>

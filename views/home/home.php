@@ -1,9 +1,9 @@
 <div class="grid-container">
 	<div class="inner-container">
 		<section id="cover">
-			<span id="danielle" class="script">Danielle</span>
-			<span class="script">and</span>
-			<span id="eric" class="script">Eric</span>
+			<span id="danielle" class="fancy_script">D</span><span class="script">aniell</span><span class="fancy_script">e</span>
+			<span class="word script">and</span>
+			<span id="eric" class="word fancy_script">E</span><span class="word script">ri</span><span class="fancy_script">c</span>
 		</section>
 		<section id="carousel">
 			<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>

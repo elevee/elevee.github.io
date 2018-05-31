@@ -2,7 +2,7 @@
 	<h3 class="script">Frequently Asked Questions</h3>
 	<section id="faq" class="callout">
 		<h4>Where/when is [insert event here]?</h4>
-		<p>Check out our schedule page!</p>
+		<p>Check out our <a href="/weekend">schedule</a> page!</p>
 
 		<h4>How can I get around Paso if I don’t rent a car?</h4>
 		<p>Uber and Lyft are always good bets. Especially if you’re going to enjoy all the wineries!</p>

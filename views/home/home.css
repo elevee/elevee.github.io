@@ -45,10 +45,20 @@ section {
 	padding-top: 15px;
 }
 
-#cover .script {
+#cover .word {
+	margin-left: 33px;
+}
+
+#cover .fancy_script {
 	font-family: 'Burgues Script';
 	font-size: 117px;
-	margin-right: 33px;
+	/*transform: rotate(-20deg);*/
+}
+
+#cover .script {
+	/*font-family: 'Pinyon Script';*/
+	font-size: 117px;
+	/*margin-right: 33px;*/
 	/*transform: rotate(-20deg);*/
 }
 

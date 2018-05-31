@@ -75,7 +75,7 @@ if(isset($route_pieces) && is_array($route_pieces) && isset($route_pieces[1]) &&
 inc("_rsvp_modal", null);
 echo("<script src='scripts/foundation-6.4.2-complete/js/vendor/what-input.js'></script>");
 echo("<script src='scripts/foundation-6.4.2-complete/js/vendor/foundation.js'></script>");
-echo("<script src='/scripts/index.js?%s' type='text/javascript'></script>");
+echo(sprintf("<script src='/scripts/index.js?%s' type='text/javascript'></script>", time()));
 echo("<script>");
 	echo("$(document).foundation();");
 echo("</script>");

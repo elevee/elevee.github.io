@@ -5,3 +5,22 @@
 .story .cell {
 	padding: 5px;
 }
+
+.story .headshot {
+	width: 250px;
+	height: 250px;
+	padding: 0px;
+	position: relative;
+	border-radius: 70px;
+	background-position: 50% 28%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+.headshot[data-role='bride'] {
+	background-image:url('/img/danielle_hs_bg.jpg');
+}
+
+.headshot[data-role='groom'] {
+	background-image:url('/img/danielle_hs_bg.jpg');
+}
