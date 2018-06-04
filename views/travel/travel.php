@@ -37,7 +37,7 @@
 				<a id="area2" class="area" href="#"></a>
 				
 				<div id="ca_airport_map">
-					<img src="ca_map.jpg" alt="Nearby airports to Paso Robles" width=500 height=500 usemap="#airport_map">
+					<img src="/img/ca_map.jpg" alt="Nearby airports to Paso Robles" width=500 height=500 usemap="#airport_map">
 					<a style="left: 278; top: 384;" data-airport="lax" class="airport_point" href="#">
 						<i class="fa fa-lg fa-plane" aria-hidden="true"></i>
 					</a>
