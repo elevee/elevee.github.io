@@ -7,20 +7,25 @@
 }
 
 .story .headshot {
-	width: 250px;
-	height: 250px;
+	width: 275px;
+	height: 500px;
 	padding: 0px;
 	position: relative;
-	border-radius: 70px;
+	/*border-radius: 70px;*/
 	background-position: 50% 28%;
     background-repeat:   no-repeat;
     background-size:     cover;
 }
 
 .headshot[data-role='bride'] {
-	background-image:url('/img/danielle_hs_bg.jpg');
+	background-image:url('/img/danielle_tinder.png');
 }
 
 .headshot[data-role='groom'] {
-	background-image:url('/img/danielle_hs_bg.jpg');
+	background-image:url('/img/eric_tinder.png');
+}
+
+.story .body p {
+	font-family: sans-serif;
+	font-size: 16px;
 }

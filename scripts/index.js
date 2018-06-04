@@ -113,7 +113,7 @@ $(document).ready(function(){
 			data: input,
 			dataType: "json",
 			success: function(data){
-				console.log("Response: "+JSON.stringify(data));
+				// console.log("Response: "+JSON.stringify(data));
 				if(data && data.status === "SUCCESS"){
 					var _html  = "<div class='grid-x grid-padding-x'>";
 						_html += 	"<div class='medium-12 cell'>";
@@ -196,7 +196,7 @@ $(document).ready(function(){
 					$('#rsvp_modal').iziModal('stopLoading');
 
 					$(".switch-field").on("click", "label", function(event){
-						console.log("you just clicked: "+$(this).attr('for'));
+						// console.log("you just clicked: "+$(this).attr('for'));
 						if($(this).attr("for") == "attending_yes"){
 							$("#if_attending").slideDown();
 						} else {
@@ -205,7 +205,7 @@ $(document).ready(function(){
 					});
 
 					if(data.record.attending && data.record.attending.length > 0){ //if they already rsvped NO, it shows that and hides the other questions
-						console.log("Data Record attending length!", data.record.attending.length);
+						// console.log("Data Record attending length!", data.record.attending.length);
 						if(data.record.attending == "N"){ $("label[for=attending_no]").click(); }
 					}
 
@@ -244,14 +244,14 @@ $(document).ready(function(){
 							return;
 						}
 
-						console.log("Submitting confirmation: "+JSON.stringify(postData));
+						// console.log("Submitting confirmation: "+JSON.stringify(postData));
 						$.ajax({
 							url: "http://www.levinelabs.com/rsvp-ajax.php",
 							method: "post",
 							data: postData,
 							dataType: "json"
 						}).done(function(data){
-							console.log("Response: "+JSON.stringify(data));
+							// console.log("Response: "+JSON.stringify(data));
 							if(data && data.status === "SUCCESS"){
 								var _html  = "<div class='grid-x grid-padding-x rsvp_response'>";
 								if(data.responseHeadline){
@@ -281,8 +281,8 @@ $(document).ready(function(){
 								$('#rsvp_modal').css("min-height", "auto");
 							}
 						}).fail(function(err, responseText, errorThrown){
-							console.log("Error: "+JSON.stringify(err));
-							console.log(responseText+": "+errorThrown);
+							// console.log("Error: "+JSON.stringify(err));
+							// console.log(responseText+": "+errorThrown);
 							$('#rsvp_modal').iziModal('stopLoading');
 						});
 

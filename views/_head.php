@@ -1,5 +1,15 @@
 <html>
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120214729-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-120214729-1');
+	</script>
+
 	<title><?php echo(isset($args["whitelist"][$args["nav"]]["label"]) && is_string($args["whitelist"][$args["nav"]]["label"]) ? $args["whitelist"][$args["nav"]]["label"]." - " : ""); ?>Wedding of Danielle Lewin & Eric Levine</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />

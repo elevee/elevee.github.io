@@ -28,22 +28,38 @@
 			      <li class="orbit-slide">
 			        <figure class="orbit-figure">
 			          <img class="orbit-image" src="/img/pizza_laugh.jpg" alt="Making Pizza">
-			          <figcaption class="orbit-caption">Pizza!</figcaption>
+			          <!-- <figcaption class="orbit-caption">Pizza!</figcaption> -->
 			        </figure>
 			      </li>
 			      <li class="orbit-slide">
 			        <figure class="orbit-figure">
-			          <img class="orbit-image" src="https://placehold.it/1200x600/666&text=Slide-4" alt="Space">
-			          <figcaption class="orbit-caption">Outta This World</figcaption>
+			          <img class="orbit-image" src="/img/puck_flip.jpg">
+			        </figure>
+			      </li>
+			      <li class="orbit-slide">
+			        <figure class="orbit-figure">
+			          <img class="orbit-image" src="/img/meadow.jpg">
 			        </figure>
 			      </li>
 			    </ul>
 			  </div>
 			  <nav class="orbit-bullets">
-			    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-			    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-			    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-			    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+			    <button class="is-active" data-slide="0">
+			    	<!-- <span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span> -->
+			    </button>
+			    <button data-slide="1">
+			    	<!-- <span class="show-for-sr">Second slide details.</span> -->
+			    </button>
+			    <button data-slide="2">
+			    	<!-- <span class="show-for-sr">Third slide details.</span> -->
+			    </button>
+			    <button data-slide="3">
+			    	<!-- <span class="show-for-sr">Fourth slide details.</span> -->
+			    </button>
+			    <button data-slide="4">
+			    	<!-- <span class="show-for-sr">Fourth slide details.</span> -->
+			    </button>
+			    <!-- <button data-slide="5"><span class="show-for-sr">Fourth slide details.</span></button> -->
 			  </nav>
 			</div>
 		</section>
