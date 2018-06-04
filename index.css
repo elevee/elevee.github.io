@@ -134,6 +134,11 @@ img {
 	margin-left: 15px;
 }
 
+#rsvp_modal .guest h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
 .switch-field {
   font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
   padding: 10px;

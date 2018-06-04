@@ -116,8 +116,8 @@ $(document).ready(function(){
 				// console.log("Response: "+JSON.stringify(data));
 				if(data && data.status === "SUCCESS"){
 					var _html  = "<div class='grid-x grid-padding-x'>";
-						_html += 	"<div class='medium-12 cell'>";
-						_html += 		"<h1><span id='inviteName'>"+data.record.name+"</span><span id='inviteCode'>("+data.record.code+")</span></h1>";
+						_html += 	"<div class='medium-12 cell guest'>";
+						_html += 		"<h1><span id='inviteName'>"+data.record.name+"</span><br/><span id='inviteCode'>("+data.record.code+")</span></h1>";
 						_html += 	"</div>";
 						_html += "</div>";
 						_html += "<div class='grid-x grid-padding-x'>";
