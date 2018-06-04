@@ -9,7 +9,7 @@
 		<div class="grid-x">
 			<div class="cell large-4 large-offset-4">
 				<a href="https://www.honeyfund.com/wedding/LevineLaVidaLoca" target="_blank">
-					<img src="honeyfund-logo-500x168.png" alt="Honeyfund"/>
+					<img src="/img/honeyfund-logo-500x168.png" alt="Honeyfund"/>
 				</a>
 			</div>
 		</div>
