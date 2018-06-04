@@ -18,7 +18,7 @@
 	<!-- Stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Pinyon+Script|Cabin|Farsan" rel="stylesheet">
 	<link rel='stylesheet' type='text/css' href='/scripts/foundation-6.4.2-complete/css/foundation.css' />
-	<link rel='stylesheet' type='text/css' href='/node_modules/izimodal/css/iziModal.min.css' />
+	<link rel='stylesheet' type='text/css' href='/scripts/izimodal/css/iziModal.min.css' />
 	<link rel='stylesheet' type='text/css' href='index.css' />
 	<link rel='stylesheet' type='text/css' href='/views/_header/_header.css' />
 
@@ -35,7 +35,7 @@
 	
 	<!-- Script tags that must be before the body -->
 	<script src='/scripts/foundation-6.4.2-complete/js/vendor/jquery.js' type='text/javascript'></script>
-	<script src='/node_modules/izimodal/js/iziModal.min.js' type='text/javascript'></script>
+	<script src='/scripts/izimodal/js/iziModal.min.js' type='text/javascript'></script>
 	<script src="https://use.fontawesome.com/01ccd90832.js"></script>
 	<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
 </head>
