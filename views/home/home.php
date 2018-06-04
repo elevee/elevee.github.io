@@ -71,7 +71,7 @@
 					<p>Make sure to RSVP above in the upper-right by July 11th.</p>
 				</div>
 				<div class="small-6 cell">
-					<img src="toothandnail.jpg">
+					<img src="/img/toothandnail.jpg">
 				</div>
 			</div>
 
