@@ -1,4 +1,6 @@
 <?php
+include sprintf("%s/env.php", __DIR__);
+
 function inc($name, $args){
 	if(isset($name) && is_string($name) && strlen($name)>0){
 		switch ($name) {

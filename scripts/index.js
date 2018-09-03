@@ -81,10 +81,11 @@ $(document).ready(function(){
 	    }
 	});
 
-	$(document).on('click', '.trigger', function (event) {
-	    event.preventDefault();
-	    $('#rsvp_modal').iziModal('open');
-	});
+	// RSVPs disabled
+	// $(document).on('click', '.trigger', function (event) {
+	//     event.preventDefault();
+	//     $('#rsvp_modal').iziModal('open');
+	// });
 
 	$(document).on('click', "button.reset", function (event) {
 		$('#rsvp_modal').iziModal('resetContent');
@@ -321,13 +322,13 @@ $(document).ready(function(){
 			}
 		});
 		
-	    setTimeout(function(){
+	    // setTimeout(function(){
 	    	
 			    // 	<div class="g-recaptcha" data-sitekey=""></div>
 			    // </div>
 	    	// $("#swap").html(_html);
 	    	
-	    }, 1000);	    
+	    // }, 1000);	    
 	});
 
 	// $.ajax({

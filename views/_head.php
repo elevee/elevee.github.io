@@ -16,6 +16,10 @@
     <meta name="description"/>
     <meta name="author">
 
+	<!-- Preload Fonts in attempt to optimize load speed -->
+	<link rel="preload" href="BurguesScript.ttf" as="font">
+	<link rel="preload" href="MrsEavesSmallCaps.ttf" as="font">
+	<!-- <link rel='stylesheet' type='text/css' href='index.css' /> -->
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

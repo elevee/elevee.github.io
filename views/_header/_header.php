@@ -19,7 +19,7 @@
 	</div>
 	<div class="top-bar-right large-2 medium-2 cell">
 		<a href="#" class="trigger">
-			<div><button class='button'>RSVP by 7/11</button></div>
+			<div><button class='button' disabled>RSVPs Closed</button></div>
 		</a>
 	</div>
 </div>

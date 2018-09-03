@@ -73,14 +73,14 @@ img {
   margin: 0 auto;
 }
 
-.top-bar button, 
+.top-bar button, .top-bar button[disabled], 
 #accommodations button, 
 .iziModal-wrap button {
   margin: 0px;
   background-color: #93002A;
 }
 
-.top-bar button:hover, 
+.top-bar button:hover, .top-bar button[disabled]:hover,
 #accommodations button:hover,
 .iziModal-wrap button:hover {
   background-color: white;
